@@ -4,16 +4,20 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Services from "./pages/Services";
+import {Routes, Route} from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Navbar>
-        <Home />
-        <About />
-        <Contact />
-        <Services />
-        <Login />
+       <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/home" element={<Home/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/services" element={<Services/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+       </Routes>
       </Navbar>
     </div>
   );
