@@ -14,9 +14,9 @@ const Navbar = ({ children }) => {
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
 
-                    <div className="w-full navbar bg-base-100 px-20">
+                    <div className="w-full navbar bg-base-100 fixed top-0 px-20">
                         <div className="flex-1 px-2 mx-2">
-                            <Link to='/home'>
+                            <Link to='/'>
                                 Wash Co. </Link></div>
                         <div className="flex-none lg:hidden">
                             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -26,7 +26,7 @@ const Navbar = ({ children }) => {
 
                         <div className="flex-none hidden lg:block">
                             <ul className="menu menu-horizontal">
-                                <li><NavLink to="/home" className='rounded-lg'>Home</NavLink></li>
+                                <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
                                 <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
                                 <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
                                 <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
