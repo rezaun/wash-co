@@ -6,13 +6,20 @@ const Landing = () => {
         <>
             <div className="hero h-screen lg:h-[60vh] bg-accent relative mt-16">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div>
+                    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50">
                         <p className='text-xl'>Best Quality</p>
                         <h1 className="text-5xl font-bold">Professional Cleaning Service</h1>
                         <p className="py-6 max-w-xl">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
                         <button className="btn btn-primary">Get Started</button>
                     </div>
-                    <div className='h-[60vh] shrink-0'>
+                    <div className='h-[60vh] shrink-0' data-aos="fade-up"
+                        data-aos-offset="200"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-mirror="true"
+                        data-aos-once="false"
+                        data-aos-anchor-placement="top-center">
                         <img src={BucketGirl} className="h-full" />
                     </div>
                 </div>
