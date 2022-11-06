@@ -4,6 +4,19 @@ const AddAdmin = () => {
     return (
         <div>
             <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
+            <h2>This is add admin page</h2>
         </div>
     );
 };
