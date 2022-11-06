@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
+import useAdmin from '../hooks/useAdmin';
 
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
+    const { pathname } = useLocation();
+
+    const [admin] = useAdmin();
     return (
         <div>
             <div className="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
@@ -10,6 +14,10 @@ const Navbar = ({ children }) => {
                 <div className="drawer-content flex flex-col">
 
                     <div className="w-full navbar bg-base-100 fixed top-0 px-20">
+                        {/* dashboard hidden show button */}
+                        {pathname.includes("dashboard") && <label tabIndex={0} htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                        </label>}
                         <div className="flex-1 px-2 mx-2">
                             <Link to='/'>
                                 Wash Co. </Link></div>
@@ -22,6 +30,8 @@ const Navbar = ({ children }) => {
                         <div className="flex-none hidden lg:block">
                             <ul className="menu menu-horizontal">
                                 <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
+                                {admin && (
+                                    <li><NavLink to="/dashboard" className='rounded-lg'>Dashboard</NavLink></li>)}
                                 <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
                                 <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
                                 <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
