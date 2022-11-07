@@ -11,6 +11,7 @@ import AdminRoute from "./authentication/AdminRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AddAdmin from "./pages/Dashboard/AddAdmin";
 import AddService from "./pages/Dashboard/AddService";
+import DashboardHome from "./pages/Dashboard/DashboardHome";
 
 
 function App() {
@@ -34,10 +35,10 @@ function App() {
               ))
             }
           </Route>
-          <Route element={<AdminRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />           
-              <Route path='add-admin' element={<AddAdmin />}/>
-              <Route path='add-service' element={<AddService />}/>        
+          <Route path="/dashboard" element={<AdminRoute><Dashboard/></AdminRoute>}>           
+            <Route index element={<DashboardHome/>} />
+            <Route path='add-admin' element={<AddAdmin />} />
+            <Route path='add-service' element={<AddService />}/> 
           </Route>
         </Routes>
       </Navbar>

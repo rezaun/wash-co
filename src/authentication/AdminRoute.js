@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 
-const AdminRoute = () => {
+const AdminRoute = ({children}) => {
     const location = useLocation();
     const [admin] = useAdmin();
 
@@ -11,7 +11,7 @@ const AdminRoute = () => {
         return <Navigate to="/" replace/>;
     }
 
-    return <Outlet/>;
+    return children;
 };
 
 export default AdminRoute;

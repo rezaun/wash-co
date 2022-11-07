@@ -1,13 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
-const DashboardSidebar = ({children}) => {
+const DashboardSidebar = () => {
     return (
         <div className="drawer drawer-mobile mt-16 bg-accent">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
                 {/* <!-- Page content here --> */}
-               {children}
+               <Outlet/>
 
             </div>
             <div className="drawer-side">
